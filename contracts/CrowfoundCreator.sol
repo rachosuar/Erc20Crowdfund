@@ -90,11 +90,11 @@ contract CrowdFund is ERC20, Ownable {
         payable(msg.sender).transfer(campaignData.pledged);
     }
 
-    // function transferFounds (uint ammount) public payable {
+    function transferFounds (uint ammount) public payable {
         
-    //     this.transfer(msg.sender,ammount);
-    //     campaignData.pledged+=msg.value;
-    // }
+        this.transfer(msg.sender,ammount);
+        campaignData.pledged+=msg.value;
+    }
     function claimFounds() public  {
        
         if (!launched){
